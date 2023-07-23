@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.kotlingame.view.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/addDataFragment"
+        android:name="com.example.kotlingame.view.AddDataFragment"
+        android:label="fragment_add_data"
+        tools:layout="@layout/fragment_add_data" >
+        <action
+            android:id="@+id/action_addDataFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_addDataFragment_to_showDataFragment"
+            app:destination="@id/showDataFragment" />
+        <action
+            android:id="@+id/action_addDataFragment_to_showDataFragment2"
+            app:destination="@id/showDataFragment" />
+        <action
+            android:id="@+id/action_addDataFragment_to_mainActivity2"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/showDataFragment"
+        android:name="com.example.kotlingame.view.ShowDataFragment"
+        android:label="ShowDataFragment" >
+        <action
+            android:id="@+id/action_showDataFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_showDataFragment_to_addDataFragment"
+            app:destination="@id/addDataFragment"
+            app:argType="com.example.kotlingame.model.Datos" />
+        <action
+            android:id="@+id/action_showDataFragment_to_mainActivity2"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_showDataFragment_to_addDataFragment2"
+            app:destination="@id/addDataFragment" />
+    </fragment>
+</navigation>
